@@ -1,0 +1,46 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row justify-content-center my-3">
+  <div class="col-5">
+    <img src="{% static 'portfolio/Appy_image.jpeg' %}" class="img-fluid">
+  </div>
+</div>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    <h2 class="font-weight-bold">Arjun Patidar  M.Tech CS From IIT Bhilai </h2>
+  </div>
+</div>
+
+
+
+
+
+{% for blog in blog %}
+<div class="row justify-content-center my-3">
+  <div class="col-md-10">
+    <a href="{% url 'blog:detail' blog.id %}">
+      
+    </a>
+    
+    <h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}
